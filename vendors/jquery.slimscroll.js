@@ -138,6 +138,18 @@
                 me.unwrap();
                 return;
               }
+              else if ('disable' in options)
+              {
+                // clear slimscroll mouse event listeners
+                detachWheel();
+                return;
+              }
+              else if ('enable' in options)
+              {
+                // enable slimscroll mouse event listeners
+                attachWheel();
+                return;
+              }
 
               // scroll content by the given offset
               scrollContent(offset, false, true);
