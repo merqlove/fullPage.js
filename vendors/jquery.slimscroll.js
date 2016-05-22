@@ -127,6 +127,11 @@
                 // jump by value pixels
                 offset += parseInt(o.scrollBy);
               }
+              else if ('resize' in options)
+              {
+              	showBar();
+              	return;
+              }
               else if ('destroy' in options)
               {
                 // clear slimscroll mouse event listeners
@@ -136,18 +141,6 @@
                 bar.remove();
                 rail.remove();
                 me.unwrap();
-                return;
-              }
-              else if ('disable' in options)
-              {
-                // clear slimscroll mouse event listeners
-                detachWheel();
-                return;
-              }
-              else if ('enable' in options)
-              {
-                // enable slimscroll mouse event listeners
-                attachWheel();
                 return;
               }
 
